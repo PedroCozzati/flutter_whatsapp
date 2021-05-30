@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'ListStatus.dart';
-import 'listConversas.dart';
+import 'Status/ListStatus.dart';
+import 'Conversas/listConversas.dart';
 
 class Whatsapp extends StatefulWidget {
 

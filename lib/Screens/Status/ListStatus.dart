@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_whatsapp/Screens/Status/StatusListTileText.dart';
+import 'package:flutter_whatsapp/Screens/Status/StatusOld.dart';
 
 import 'StatusListTile.dart';
 
@@ -18,10 +20,19 @@ class _ListStatusState extends State<ListStatus> {
           children:<Widget>[
             StatusListTile(),
             Divider(
-              height:2,
+              height:1,
               thickness: 0.13,
-              color:Colors.blueGrey.shade50,
+              color:Colors.blueGrey.shade900,
             ),
+            StatusText(),
+            Divider(
+              height: 0.1,
+              thickness: 0.1,
+              indent: 85,
+              endIndent: 10,
+              color:Colors.blueGrey.shade900,
+            ),
+            StatusView(),
           ],
         ),
       ),
