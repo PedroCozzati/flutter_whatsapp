@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_whatsapp/Screens/Chamadas/ListChamadas.dart';
 import 'Status/ListStatus.dart';
 import 'Conversas/listConversas.dart';
 
@@ -72,7 +73,7 @@ class _WhatsappState extends State<Whatsapp> {
             Icon(Icons.directions_transit, size: 350),
             ListConversas(),
             ListStatus(),
-            Icon(Icons.directions_car, size: 30),
+            ListChamadas(),
           ],
         ),
       ),

@@ -44,7 +44,7 @@ class _StatusListTileState extends State<StatusListTile> {
             ),
         ),
       title: Text("Meu Status",style: TextStyle(color: Colors.white,fontSize: 18),),
-      subtitle: Text('Toque para atualizar seu status',style: TextStyle(color:Colors.white60,fontSize: 14),),
+      subtitle: Text('Toque para atualizar seu status',style: TextStyle(color:Colors.white60,fontSize: 15),),
       tileColor: Colors.blueGrey.shade900,
       onTap: () {},
 

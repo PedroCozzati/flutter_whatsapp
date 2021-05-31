@@ -27,7 +27,7 @@ class _StatusViewState extends State<StatusView> {
         ),
       ),
       title: Text("Pedro Cozzati",style: TextStyle(color: Colors.white,fontSize: 18),),
-      subtitle: Text('há 10 minutos',style: TextStyle(color:Colors.white60,fontSize: 14),),
+      subtitle: Text('há 10 minutos',style: TextStyle(color:Colors.white60,fontSize: 15),),
       tileColor: Colors.blueGrey.shade900,
       onTap: () {},
     );
