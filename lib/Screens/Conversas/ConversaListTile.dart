@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'Chat/PageChat.dart';
+
 class ConversaTile extends StatefulWidget {
 
   @override
@@ -12,7 +14,14 @@ class _ConversaTileState extends State<ConversaTile> {
   Widget build(BuildContext context) {
     return Container(
       height: 69,
+      width: 50,
       child: ListTile(
+        onTap: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Chat()),
+          );
+        },
         leading:
         Padding(
           padding: EdgeInsets.only(top: 0,bottom: 1),
@@ -37,21 +46,21 @@ class _ConversaTileState extends State<ConversaTile> {
         child: Text('Pedro Cozzati',style: TextStyle(color: Colors.white,fontSize: 18),),
       ),
       Padding(
-        padding: EdgeInsets.only(left: 115,bottom: 1,top: 1),
+        padding: EdgeInsets.only(left: 161,bottom: 1,top: 1),
         child: Container(
           height: 30,
-          width: 85,
+          width: 40,
           child:Column(
             children: [
               Flexible(
                 flex:1,
                     child: Padding(
-                      padding: const EdgeInsets.only(top:15.0),
+                      padding: const EdgeInsets.only(top:18.0),
                       child: Container(
                         height: 1,
                         child:IconButton(
                         onPressed: (){},
-                        icon: Icon(Icons.circle_notifications,color: Colors.tealAccent,size: 20,),
+                        icon: Icon(Icons.circle_notifications,color: Colors.tealAccent,size: 22,),
                         tooltip: 'a',
                       ),
                   ),
@@ -60,11 +69,11 @@ class _ConversaTileState extends State<ConversaTile> {
               Flexible(
                 flex:10,
                 child: Padding(
-                  padding: const EdgeInsets.only(bottom: 4),
+                  padding: const EdgeInsets.only(top: 2),
                   child: Container(
                     height: 14,
                     child: Text(
-                        '00:00',style: TextStyle(fontSize: 15, color: Colors.tealAccent,),
+                        '00:00',style: TextStyle(fontSize: 13, color: Colors.tealAccent,),
                     ),
                   ),
                 ),
@@ -84,7 +93,7 @@ class _ConversaTileState extends State<ConversaTile> {
           children:[
             Padding(
               padding: const EdgeInsets.only(bottom:10.0),
-              child: Text('+5511977748028',style: TextStyle(color: Colors.white70,fontSize: 14),),
+              child: Text('+5511977748028',style: TextStyle(color: Colors.white70,fontSize: 15),),
             ),
         ],
           ),

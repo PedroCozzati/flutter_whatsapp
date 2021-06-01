@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_whatsapp/Screens/Contatos/PageContatos.dart';
 
 import 'ConversaListTile.dart';
 
@@ -42,7 +43,12 @@ class _ListConversasState extends State<ListConversas> {
               Icons.message
           ),
           backgroundColor: Colors.teal.shade300,
-          onPressed: (){}),
+          onPressed: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => PageContatos()),
+            );
+          }),
     );
   }
 }

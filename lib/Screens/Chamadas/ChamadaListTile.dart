@@ -11,7 +11,7 @@ class _ChamadaTileState extends State<ChamadaTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70,
+      height: 69,
       child: ListTile(
         leading:
         Padding(
@@ -34,10 +34,10 @@ class _ChamadaTileState extends State<ChamadaTile> {
             children:[
               Padding(
                 padding: const EdgeInsets.only(bottom:5.0),
-                child: Text('+5511977748028',style: TextStyle(color: Colors.white70,fontSize: 18),),
+                child: Text('+5511977748028',style: TextStyle(color: Colors.white,fontSize: 18),),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 111,bottom: 20),
+                padding: EdgeInsets.only(left: 123,bottom: 20),
                 child: Container(
                   height: 1,
                   child: Padding(

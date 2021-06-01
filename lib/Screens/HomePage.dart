@@ -21,9 +21,9 @@ class _WhatsappState extends State<Whatsapp> {
           backgroundColor: Colors.blueGrey.shade900,
           bottom: TabBar(
             unselectedLabelColor: Colors.white70,
-            labelColor: Colors.teal.shade600,
+            labelColor: Colors.tealAccent,
             isScrollable: true,
-            indicatorColor: Colors.teal.shade600,
+            indicatorColor: Colors.tealAccent,
             labelPadding: EdgeInsets.symmetric(horizontal: 16.0,vertical:0.5),
             tabs: [
               Tab(icon: Icon(Icons.camera_alt_rounded),
@@ -54,7 +54,7 @@ class _WhatsappState extends State<Whatsapp> {
             IconButton(
               icon: Icon(
                 Icons.search,
-                color: Colors.white,
+                color: Colors.white70,
               ),
               onPressed: () {
                 // do something
@@ -63,7 +63,7 @@ class _WhatsappState extends State<Whatsapp> {
             IconButton(
                 icon: Icon(
                     Icons.more_vert,
-                    color: Colors.white,
+                    color: Colors.white70,
                 ),
                 onPressed: (){}
                 )
