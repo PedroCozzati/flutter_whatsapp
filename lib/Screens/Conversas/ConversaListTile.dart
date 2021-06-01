@@ -11,11 +11,11 @@ class _ConversaTileState extends State<ConversaTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 70,
+      height: 69,
       child: ListTile(
         leading:
         Padding(
-          padding: EdgeInsets.only(top: 0,bottom: 5),
+          padding: EdgeInsets.only(top: 0,bottom: 1),
           child:
           Container(
             width: 50,
@@ -29,42 +29,52 @@ class _ConversaTileState extends State<ConversaTile> {
           ),
         ),
         title: Padding(
-          padding: const EdgeInsets.only(top: 14,bottom: 0),
+          padding: const EdgeInsets.only(top: 9,bottom: 0),
           child:  Row(
         children:[
         Padding(
         padding: const EdgeInsets.only(bottom:5.0),
-        child: Text('Pedro Cozzati',style: TextStyle(color: Colors.white70,fontSize: 18),),
+        child: Text('Pedro Cozzati',style: TextStyle(color: Colors.white,fontSize: 18),),
       ),
       Padding(
         padding: EdgeInsets.only(left: 115,bottom: 1,top: 1),
         child: Container(
-          height: 20,
-          child:Row(
+          height: 30,
+          width: 85,
+          child:Column(
             children: [
-              Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(bottom:0.0,right: 10),
-                    child: IconButton(
-                      onPressed: (){},
-                      icon: Icon(Icons.circle_notifications,color: Colors.tealAccent,size: 20,),
-                      tooltip: 'a',
+              Flexible(
+                flex:1,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top:15.0),
+                      child: Container(
+                        height: 1,
+                        child:IconButton(
+                        onPressed: (){},
+                        icon: Icon(Icons.circle_notifications,color: Colors.tealAccent,size: 20,),
+                        tooltip: 'a',
+                      ),
+                  ),
+                    ),
+              ),
+              Flexible(
+                flex:10,
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 4),
+                  child: Container(
+                    height: 14,
+                    child: Text(
+                        '00:00',style: TextStyle(fontSize: 15, color: Colors.tealAccent,),
                     ),
                   ),
-                  Padding(
-                        padding: const EdgeInsets.only(bottom:1.0,right: 10),
-                        child: Text(
-                            '00:00'
-                        ),
-                      ),
+                ),
+              ),
+
         ],
               ),
-            ],
+
           ),
         ),
-      ),
-
       ],
     ),
         ),
@@ -73,8 +83,8 @@ class _ConversaTileState extends State<ConversaTile> {
           child: Row(
           children:[
             Padding(
-              padding: const EdgeInsets.only(bottom:30.0),
-              child: Text('+5511977748028',style: TextStyle(color: Colors.white70,fontSize: 15),),
+              padding: const EdgeInsets.only(bottom:10.0),
+              child: Text('+5511977748028',style: TextStyle(color: Colors.white70,fontSize: 14),),
             ),
         ],
           ),

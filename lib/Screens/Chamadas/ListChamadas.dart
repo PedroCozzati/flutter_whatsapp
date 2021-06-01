@@ -38,7 +38,7 @@ class _ListChamadasState extends State<ListChamadas> {
       ),
       floatingActionButton:FloatingActionButton(
           child:Icon(
-              Icons.message
+              Icons.add_ic_call
           ),
           backgroundColor: Colors.teal.shade300,
           onPressed: (){}),

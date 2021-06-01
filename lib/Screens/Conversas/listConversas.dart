@@ -21,7 +21,7 @@ class _ListConversasState extends State<ListConversas> {
                 Divider(
                   indent: 80,
                   endIndent: 10,
-                  height: 2,
+                  height: 1,
                   thickness: 0.13,
                   color:Colors.blueGrey.shade50,
                 ),
@@ -29,7 +29,7 @@ class _ListConversasState extends State<ListConversas> {
                 Divider(
                   indent: 80,
                   endIndent: 10,
-                  height: 2,
+                  height: 1,
                   thickness: 0.13,
                   color:Colors.blueGrey.shade50,
                 ),

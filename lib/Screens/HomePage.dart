@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_whatsapp/Screens/Chamadas/ListChamadas.dart';
+import 'Camera/PageCamera.dart';
 import 'Status/ListStatus.dart';
 import 'Conversas/listConversas.dart';
 
@@ -70,7 +71,7 @@ class _WhatsappState extends State<Whatsapp> {
           ),
         body: TabBarView(
           children: [
-            Icon(Icons.directions_transit, size: 350),
+            PageCamera(),
             ListConversas(),
             ListStatus(),
             ListChamadas(),

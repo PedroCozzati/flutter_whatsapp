@@ -11,7 +11,7 @@ class _StatusListTileState extends State<StatusListTile> {
     return ListTile(
       leading:
       Padding(
-        padding: EdgeInsets.only(top:3),
+        padding: EdgeInsets.only(top:5),
         child: Column(
           children:<Widget>[
 
