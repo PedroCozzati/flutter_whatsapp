@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:flutter_whatsapp/main.dart';
+
 import 'package:flutter_whatsapp/screens/HomePage.dart';
 
 void main() {

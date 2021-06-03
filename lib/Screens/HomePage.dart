@@ -5,7 +5,6 @@ import 'Status/ListStatus.dart';
 import 'Conversas/listConversas.dart';
 
 class Whatsapp extends StatefulWidget {
-
   @override
   _WhatsappState createState() => _WhatsappState();
 }

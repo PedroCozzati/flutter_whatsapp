@@ -1,6 +1,9 @@
 
 import 'package:flutter/material.dart';
 
+import 'Chamada.dart';
+
+
 class ChamadaTile extends StatefulWidget {
 
   @override
@@ -13,6 +16,12 @@ class _ChamadaTileState extends State<ChamadaTile> {
     return Container(
       height: 69,
       child: ListTile(
+        onTap:(){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Chamada()),
+          );
+          },
         leading:
         Padding(
           padding: EdgeInsets.only(top: 0,bottom: 5),
@@ -43,7 +52,8 @@ class _ChamadaTileState extends State<ChamadaTile> {
                   child: Padding(
                     padding: const EdgeInsets.only(bottom:1.0),
                     child: IconButton(
-                      onPressed: (){},
+                      onPressed: (){
+                        },
                       icon: Icon(Icons.call,color: Colors.tealAccent,size: 20,),
                       tooltip: 'a',
                     ),

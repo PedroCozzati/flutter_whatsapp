@@ -30,7 +30,11 @@ class _ChatBodyState extends State<ChatBody> {
                child: Container(
                  child: Row(
                    children: [
-                     IconButton(icon: Icon(Icons.emoji_emotions,color: Colors.white38,), onPressed: (){})
+                     IconButton(icon: Icon(Icons.emoji_emotions,color: Colors.white38,), onPressed: (){}),
+                     Padding(
+                       padding: const EdgeInsets.only(left:10.0),
+                       child: Text('Digite aqui',style:TextStyle(fontSize: 15,color: Colors.white70)),
+                     ),
                    ],
                  ),
                  decoration: BoxDecoration(
@@ -43,12 +47,16 @@ class _ChatBodyState extends State<ChatBody> {
                ),
              ),
              Padding(
-               padding: const EdgeInsets.only(top:560.0,left: 362),
+               padding: const EdgeInsets.only(top:565.0,left: 362),
                child: Container(
-                 child: Icon(Icons.check_circle,size: 42,color: Colors.tealAccent,
+                 child:FloatingActionButton(
+                   onPressed: (){
+                   },
+                 child: Icon(Icons.mic_rounded,size: 20,color: Colors.white,
+                 ),
                  ),
                  width:50,
-                 height:37 ,
+                 height:35 ,
 
                ),
              ),
