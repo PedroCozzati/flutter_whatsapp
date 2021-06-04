@@ -85,9 +85,8 @@ class _ChamadaState extends State<Chamada> {
                 padding: EdgeInsets.only(left: 180,top: 480),
                 child: FloatingActionButton(
                   onPressed: (){
-                    Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Whatsapp()),
+                    Navigator.pop(
+                    context
                   );},
                   backgroundColor: Colors.red,
                   child: Icon(

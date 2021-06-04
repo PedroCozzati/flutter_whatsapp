@@ -15,13 +15,17 @@ class _WhatsappState extends State<Whatsapp> {
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
       length: 4,
+      initialIndex: 1,
+
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blueGrey.shade900,
           bottom: TabBar(
+
             unselectedLabelColor: Colors.white70,
             labelColor: Colors.tealAccent,
             isScrollable: true,
+
             indicatorColor: Colors.tealAccent,
             labelPadding: EdgeInsets.symmetric(horizontal: 16.0,vertical:0.5),
             tabs: [

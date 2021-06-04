@@ -69,9 +69,7 @@ class _StatusScreenState extends State<StatusScreen>with SingleTickerProviderSta
                             child: FloatingActionButton(
                               backgroundColor:  Colors.white.withOpacity(0),
                               onPressed: (){
-                                Navigator.of(context).push(new MaterialPageRoute(builder: (_)=>Whatsapp()),
-                                );
-
+                                Navigator.pop(context);
                               },
                               child: Icon(Icons.arrow_back_rounded,),
                             ),

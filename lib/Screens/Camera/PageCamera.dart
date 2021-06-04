@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_whatsapp/Screens/HomePage.dart';
+import 'package:splashscreen/splashscreen.dart';
+
+import 'Camera.dart';
 
 
 
@@ -9,18 +13,12 @@ class PageCamera extends StatefulWidget {
 
 class _PageCameraState extends State<PageCamera> {
   @override
+
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(right:160.0),
-        child: Container(
-          child: FloatingActionButton(
-            backgroundColor: Colors.white70,
-            onPressed: () {}
-    ),
-        ),
-      )
+    return FloatingActionButton(
+        onPressed:(){ Navigator.push(context,
+          MaterialPageRoute(builder: (context) => CameraTeste()));
+          }
     );
   }
 }
