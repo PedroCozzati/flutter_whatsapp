@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_whatsapp/Models/Conversa.dart';
 
 class ConversaLista extends StatefulWidget {
 
@@ -8,13 +7,10 @@ class ConversaLista extends StatefulWidget {
   _ConversaListaState createState() => _ConversaListaState();
 }
 
-String Texto;
-String mensagem;
-Conversa conversa;
 
-void TamanhoContainer(Container container){
-  container.width = Texto.length;
-}
+//void TamanhoContainer(Container container){
+//  container.width = Texto.length;
+//}
 
 class _ConversaListaState extends State<ConversaLista> {
   @override
@@ -31,7 +27,7 @@ class _ConversaListaState extends State<ConversaLista> {
             child: ListTile(
               title: Padding(
                 padding: const EdgeInsets.only(bottom:15.0),
-                child: Text({mensagem},style: TextStyle(color: Colors.white),),
+                child: Text('TESTE',style: TextStyle(color: Colors.white),),
               ),
             ),
           ),
