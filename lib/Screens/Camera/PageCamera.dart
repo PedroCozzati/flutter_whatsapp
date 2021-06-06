@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_whatsapp/Screens/HomePage.dart';
-import 'package:splashscreen/splashscreen.dart';
+
 
 import 'Camera.dart';
 

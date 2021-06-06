@@ -1,20 +1,12 @@
 import 'package:flutter/material.dart';
 
-import 'Screens/HomePage.dart';
+import 'package:flutter_whatsapp/Screens/SplashScreen.dart';
 
 void main() {
-  runApp(Whatsapp());
+  runApp(Splash());
 
 }
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => new _MyAppState();
-}
-class _MyAppState extends State<MyApp> {
-  @override
-  Widget build(BuildContext context) {
 
-  }
-}
+
 
 
