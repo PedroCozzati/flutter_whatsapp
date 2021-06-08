@@ -1,22 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_whatsapp/Models/Conversa.dart';
+import 'package:flutter_whatsapp/Screens/Conversas/Chat/TextControlller.dart';
 
 class ConversaLista extends StatefulWidget {
+  const ConversaLista({String m}) ;
 
   @override
   _ConversaListaState createState() => _ConversaListaState();
 }
 
-String Texto;
-String mensagem;
-Conversa conversa;
-
-void TamanhoContainer(Container container){
-  container.width = Texto.length;
-}
-
 class _ConversaListaState extends State<ConversaLista> {
+  final Conversa conversa = Conversa(mensagem);
+  static String get mensagem => mensagem;
+
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,12 +29,10 @@ class _ConversaListaState extends State<ConversaLista> {
             child: ListTile(
               title: Padding(
                 padding: const EdgeInsets.only(bottom:15.0),
-                child: Text({mensagem},style: TextStyle(color: Colors.white),),
+                child: Text('$mensagem',style: TextStyle(color: Colors.white),),
               ),
             ),
           ),
-
-
     );
   }
 }
