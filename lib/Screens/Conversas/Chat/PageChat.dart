@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_whatsapp/Screens/Chamadas/Chamada.dart';
+import 'package:flutter_whatsapp/Screens/Conversas/Chat/Bg.dart';
 
 
 import 'ChatBody.dart';
@@ -42,7 +43,11 @@ class _ChatState extends State<Chat> {
                 Icons.more_vert,
                 color: Colors.white70,
               ),
-              onPressed: (){}
+              onPressed: (){
+                setState(() {
+                  BackgroundImage(image:'https://img.xcitefun.net/users/2014/07/359035,xcitefun-sunset-beach-9.jpg');
+                });
+              }
           )
         ],
         backgroundColor: Colors.blueGrey.shade900,

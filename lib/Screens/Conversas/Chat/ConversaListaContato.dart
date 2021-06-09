@@ -3,22 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_whatsapp/Models/Conversa.dart';
 import 'package:flutter_whatsapp/Screens/Conversas/Chat/TextControlller.dart';
 
-class ConversaLista extends StatefulWidget {
-  const ConversaLista({String m}) ;
+class ConversaListaLeft extends StatefulWidget {
+  const ConversaListaLeft({String m}) ;
 
   @override
-  _ConversaListaState createState() => _ConversaListaState();
+  _ConversaListaLeftState createState() => _ConversaListaLeftState();
 }
 
-class _ConversaListaState extends State<ConversaLista> {
-  final Conversa conversa = Conversa(mensagem);
-  static String get mensagem => mensagem;
-
+class _ConversaListaLeftState extends State<ConversaListaLeft> {
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top:8.0,left: 8.0),
+      padding: const EdgeInsets.only(top:10.0,right: 250.0),
       child: Container(
         height: 37,
         width: 150,
@@ -29,7 +26,7 @@ class _ConversaListaState extends State<ConversaLista> {
             child: ListTile(
               title: Padding(
                 padding: const EdgeInsets.only(bottom:15.0),
-                child: Text('$mensagem',style: TextStyle(color: Colors.white),),
+                child: Text('oi',style: TextStyle(color: Colors.white),),
               ),
             ),
           ),
