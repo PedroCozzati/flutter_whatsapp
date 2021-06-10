@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_whatsapp/Models/Conversa.dart';
-import 'package:flutter_whatsapp/Screens/Conversas/Chat/TextControlller.dart';
+
 
 class ConversaListaLeft extends StatefulWidget {
   const ConversaListaLeft({String m}) ;

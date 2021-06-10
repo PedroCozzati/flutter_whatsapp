@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_whatsapp/Models/Conversa.dart';
 import 'package:flutter_whatsapp/Screens/Conversas/Chat/Bg.dart';
 import 'package:flutter_whatsapp/Screens/Conversas/Chat/CampoEmoji.dart';
-import 'package:flutter_whatsapp/Screens/Conversas/Chat/ConversaListaContato.dart';
-import 'package:flutter_whatsapp/Screens/Conversas/Chat/ConversaListaEu.dart';
+
 import 'TextControlller.dart';
 import 'TextField.dart';
 
 class ChatBody extends StatefulWidget {
   @override
   _ChatBodyState createState() => _ChatBodyState();
+  List<Conversa> messages  = [Conversa(mensagem: 'teste' , id:1204939439658598649 )];
 }
 
 class _ChatBodyState extends State<ChatBody> {
@@ -24,7 +25,7 @@ class _ChatBodyState extends State<ChatBody> {
       child:
        Stack(
          children:[
-           BackgroundImage(image: 'https://th.bing.com/th/id/R8a814aa89f8c72a455d860b9ab50e3d1?rik=TjPdbWk%2bul%2b%2frA&pid=ImgRaw'),
+          BackgroundImage(image: 'https://1.bp.blogspot.com/-jNFpweSEPGc/XOAwhsqdlhI/AAAAAAAAZGc/lu92YMJlmrcnKmDKVNOtrgdSo6CIOnbFwCLcBGAs/s640/8.jpg'),
            Column(
              mainAxisAlignment: MainAxisAlignment.end,
              children: [
@@ -32,40 +33,44 @@ class _ChatBodyState extends State<ChatBody> {
                  flex:1,
                  child: Container(
                    width: 400,
-                   height: 300,
-                     child: ListView(
-                       reverse: true,
+                     child: ListView.builder(
+                         reverse: true,
+                         shrinkWrap: true,
+                         itemCount: widget.messages.length,
+                         itemBuilder: (context, indice){
+                           return Container (
+                             height: 60,
+                               padding: EdgeInsets.only(left: 14,right: 14,top: 10,bottom: 10),
+                                 child: Align(
+                                 alignment: (widget.messages[indice].id == 1204939439658598649?Alignment.topRight:Alignment.topLeft),
+                                 child: Container(
+                                 decoration: BoxDecoration(
+                                 borderRadius: BorderRadius.circular(10),
+                                 color: (widget.messages[indice].id == 1204939439658598649 ?Colors.teal.shade900:Colors.blueGrey.shade900),
+                                 ),
+                                 padding: EdgeInsets.all(10),
+                                 child: Text(widget.messages[indice].mensagem, style: TextStyle(fontSize: 15,color: Colors.white),),
+                                 ),
+                           ),
+                           );
+                         }
+                     ),
 
-                       physics: ClampingScrollPhysics(),
-                       shrinkWrap: true,
-                       children: [
-                         ConversaListaLeft(),
-                         ConversaListaRight(),
-                         ConversaListaLeft(),
-                         ConversaListaRight(),
-                         ConversaListaLeft(),
-                         ConversaListaRight(),
-                         ConversaListaRight(),
-                         ConversaListaRight(),
-                         ConversaListaLeft(),
-                         ConversaListaRight(),
-                         ConversaListaRight(),
-                         ConversaListaLeft(),
-                         ConversaListaRight(),
-                            ],
                      ),
                    ),
-               ),
            Column(
              mainAxisAlignment: MainAxisAlignment.end,
              children:[
-               Container(
-                 child:Row(
-                   children:[
-                     CampoEmoji(),
-                     TextControl(),
-                     CampoText(),
-                   ],
+               Expanded(
+                 flex: 0,
+                 child: Container(
+                   child:Row(
+                     children:[
+                       CampoEmoji(),
+                       TextControl(),
+                       CampoText(),
+                     ],
+                   ),
                  ),
                ),
              ],
@@ -78,3 +83,5 @@ class _ChatBodyState extends State<ChatBody> {
     );
   }
 }
+
+

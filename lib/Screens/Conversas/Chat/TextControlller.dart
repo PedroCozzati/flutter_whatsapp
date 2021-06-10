@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_whatsapp/Models/Conversa.dart';
-import 'package:flutter_whatsapp/Screens/Conversas/Chat/ChatBody.dart';
-import 'package:flutter_whatsapp/Screens/Conversas/Chat/ConversaListaContato.dart';
-import 'package:flutter_whatsapp/Screens/Conversas/Chat/TextField.dart';
+
+import 'PageChat.dart';
+
+
 
 class TextControl extends StatefulWidget {
+  TextControl({this.teste}) ;
+  final String teste;
   @override
   _TextControlState createState() => _TextControlState();
 }
@@ -35,6 +38,10 @@ class _TextControlState extends State<TextControl> {
                   borderRadius: BorderRadius.circular(80.0),
                 ),
                 hintText: 'Digite aqui',
+                hintStyle: TextStyle(
+                  color: Colors.white70,
+                  height: 1,
+                ),
               ),
               style: TextStyle(fontSize: 15, color: Colors.white),
             ),
@@ -53,9 +60,11 @@ class _TextControlState extends State<TextControl> {
                   Icons.send
               ),
               onPressed: () {
-                final String mensagem = _controladorMensagem.text;
-                final Conversa conversa = Conversa(mensagem);
-                print(conversa);
+              TextControl(teste: _controladorMensagem.text) ;
+                setState(() {
+                  Chat();
+                });
+
               },
             ),
           ),
@@ -63,6 +72,10 @@ class _TextControlState extends State<TextControl> {
       ),
 
     );
+
   }
 
 }
+
+
+

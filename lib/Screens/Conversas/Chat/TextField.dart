@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'TextControlller.dart';
 
 class CampoText extends StatefulWidget {
 
@@ -20,6 +19,7 @@ class _CampoTextState extends State<CampoText> {
             height: 40,
             width: 50,
             child: FloatingActionButton(
+              heroTag: 'btn2',
               onPressed: (){},
               child: Icon(
                 Icons.mic_rounded,size: 20,color: Colors.white,
