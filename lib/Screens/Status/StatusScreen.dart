@@ -19,11 +19,10 @@ class _StatusScreenState extends State<StatusScreen>with SingleTickerProviderSta
       duration: const Duration(seconds: 10),
     )..addListener(() {
       setState(() {
-        if (Duration.microsecondsPerSecond == 10)
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Whatsapp()),
-          );
+        Future <Widget> future() async {
+          await Future.delayed(Duration(seconds: 10));
+          return Whatsapp();
+        }
       });
     });
     controller.forward();
@@ -167,6 +166,7 @@ class _StatusScreenState extends State<StatusScreen>with SingleTickerProviderSta
                     value: controller.value,
                     backgroundColor: Colors.grey,
                     valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+
                   ),
                 ),
               )

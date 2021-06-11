@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_whatsapp/Models/Conversa.dart';
+import 'package:flutter_whatsapp/Screens/Conversas/Chat/ConversaListaEu.dart';
 
+import 'ChatBody.dart';
 import 'PageChat.dart';
 
 
 
 class TextControl extends StatefulWidget {
-  TextControl({this.teste}) ;
-  final String teste;
   @override
   _TextControlState createState() => _TextControlState();
 }
 
 class _TextControlState extends State<TextControl> {
-  final TextEditingController _controladorMensagem = TextEditingController();
+   TextEditingController controladorMensagem = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +26,9 @@ class _TextControlState extends State<TextControl> {
             width: 270,
             height: 45,
             child: TextField(
+              cursorColor: Colors.teal,
               onTap: () {},
-              controller: _controladorMensagem,
+              controller: controladorMensagem,
               decoration: InputDecoration(
                 filled: true,
                 fillColor: Colors.blueGrey.shade900,
@@ -60,11 +61,15 @@ class _TextControlState extends State<TextControl> {
                   Icons.send
               ),
               onPressed: () {
-              TextControl(teste: _controladorMensagem.text) ;
-                setState(() {
-                  Chat();
-                });
-
+                final String mensag = controladorMensagem.text;
+                final mensagem = Conversa(mensagem:mensag,id:2,data:DateTime.now());
+                Navigator.push(
+                context,
+                MaterialPageRoute(
+                builder: (context) => ConversaLista(
+                mensagem:mensagem
+                ),
+                ));
               },
             ),
           ),
