@@ -7,6 +7,8 @@ class PageContatos extends StatefulWidget {
 }
 
 class _PageContatosState extends State<PageContatos> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +24,7 @@ class _PageContatosState extends State<PageContatos> {
                     style: TextStyle(
                     color: Colors.white,fontSize: 20)),
                   TextSpan(
-                    text: '\n  2 contatos ',
+                    text: '\n  2  contatos ',
                     style: TextStyle(color: Colors.white)),
                   ]),
               ),

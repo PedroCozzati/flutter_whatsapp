@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_whatsapp/Models/Conversa.dart';
-import 'package:flutter_whatsapp/Screens/Conversas/Chat/ChatBody.dart';
+
 
 class ConversaLista extends StatefulWidget {
   final Conversa mensagem;

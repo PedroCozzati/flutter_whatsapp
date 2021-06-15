@@ -26,15 +26,7 @@ class _ListConversasState extends State<ListConversas> {
                   thickness: 0.13,
                   color:Colors.blueGrey.shade50,
                 ),
-                ConversaTile(),
-                Divider(
-                  indent: 80,
-                  endIndent: 10,
-                  height: 1,
-                  thickness: 0.13,
-                  color:Colors.blueGrey.shade50,
-                ),
-                ConversaTile(),
+
         ],
     ),
         ),

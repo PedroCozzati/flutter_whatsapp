@@ -1,6 +1,10 @@
+import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_whatsapp/Screens/HomePage.dart';
+import 'package:flutter_whatsapp/Screens/Conversas/Chat/CampoEmoji.dart';
+import 'package:flutter_whatsapp/Screens/Conversas/Chat/TextControlller.dart';
+import 'package:flutter_whatsapp/Screens/Conversas/Chat/TextField.dart';
+
 
 
 class StatusScreen extends StatefulWidget {
@@ -16,19 +20,24 @@ class _StatusScreenState extends State<StatusScreen>with SingleTickerProviderSta
   void initState() {
     controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 10),
+      duration: const Duration(seconds: 10)
     )..addListener(() {
-      setState(() {
-        Future <Widget> future() async {
-          await Future.delayed(Duration(seconds: 10));
-          return Whatsapp();
-        }
-      });
+      setState(() {}
+      );
     });
     controller.forward();
     super.initState();
+    startTime();
   }
 
+  startTime() async {
+    var duration = new Duration(seconds: 10);
+    return new Timer(duration, route);
+  }
+
+  route() {
+    Navigator.pop(context);
+  }
 
   @override
   void dispose() {
@@ -46,7 +55,6 @@ class _StatusScreenState extends State<StatusScreen>with SingleTickerProviderSta
                 color: Colors.grey.shade900,
                 width: 1200,
                 height: 683,
-
                 child: Image(
                     image: NetworkImage('https://yt3.ggpht.com/a/AATXAJwTwhMXtrKbVCkJBDayqTR74vIVEfT_NR88UQ=s900-c-k-c0xffffffff-no-rj-mo'),
                     fit: BoxFit.fill
@@ -129,32 +137,43 @@ class _StatusScreenState extends State<StatusScreen>with SingleTickerProviderSta
               ),
               Padding(
                 padding: EdgeInsets.only(top:630),
-                child: Container(
-                  color: Colors.white.withOpacity(0.06),
-                  width: 800,
-                  height: 50,
-                  child: Center(child: RichText(
-                    text:TextSpan(
-                      children: [
-                        TextSpan(
-                          text:'       ^\n',
+                  child: GestureDetector(
+                    child: Container(
+                      color: Colors.white.withOpacity(0.06),
+                      width: 800,
+                      height: 50,
+                      child: Center(
+                        child: RichText(
+                        text:TextSpan(
+                          children: [
+                            TextSpan(
+                              text:'       ^\n',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                              ),
+                            ),
+                          TextSpan(
+                          text:'RESPONDER',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 13,
                           ),
                         ),
-                      TextSpan(
-                      text:'RESPONDER',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 13,
+                      ],
+                        ),
+                      ),
                       ),
                     ),
-                  ],
-                    ),
+                    onTap: (){
+                      setState(() {
+                          return TextField(
+                            autofocus: true,
+                            cursorColor: Colors.white,
+                          );
+                      });
+                    },
                   ),
-                  ),
-                ),
               ),
               Padding(
                 padding: EdgeInsets.only(top:30),
