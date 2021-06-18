@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 
 class Chamada extends StatefulWidget {
-  const Chamada({Key key}) : super(key: key);
 
   @override
   _ChamadaState createState() => _ChamadaState();

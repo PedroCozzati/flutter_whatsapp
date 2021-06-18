@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_whatsapp/Screens/Status/StatusScreen.dart';
 
 class StatusMain extends StatefulWidget {
-  const StatusMain({Key key}) : super(key: key);
+
 
   @override
   _StatusMainState createState() => _StatusMainState();

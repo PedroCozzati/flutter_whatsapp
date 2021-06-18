@@ -11,7 +11,9 @@ class Whatsapp extends StatefulWidget {
 class _WhatsappState extends State<Whatsapp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return  WillPopScope(
+        onWillPop: () async => false,
+    child: MaterialApp(
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
       length: 4,
@@ -82,6 +84,7 @@ class _WhatsappState extends State<Whatsapp> {
         ),
       ),
       ),
+    ),
     );
   }
 }

@@ -1,9 +1,8 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_whatsapp/Screens/Contatos/AddContatoTile.dart';
+import 'package:flutter_whatsapp/Screens/Conversas/Chat/PageChat.dart';
 
-import 'ContatoListTile.dart';
+
 
 
 class ListContatos extends StatefulWidget {
@@ -90,6 +89,19 @@ NetworkImage randomImages() {
   Random random = Random();
   return predefinedImages[random.nextInt(predefinedImages.length)];
 }
+
+String randomNomes() {
+  // Define all colors you want here
+  const predefinedNomes = [
+    'Pedro',
+    'Joao,',
+    'Luiz',
+    'Ana',
+    'Julia',
+  ];
+  Random random = Random();
+  return predefinedNomes[random.nextInt(predefinedNomes.length)];
+}
 class _ContactRow extends State<ContactRow> {
   @override
   Widget build(BuildContext context) {
@@ -105,26 +117,34 @@ class _ContactRow extends State<ContactRow> {
                     child: Container(
                       width: 50,
                       height: 50,
-                      child: CircleAvatar(
-                        backgroundImage: randomImages(),
-                        radius: 300,
+                      child: GestureDetector(
+                        onTap: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => Chat(randomNomes())));
+                            },
+                        child: CircleAvatar(
+                          backgroundImage: randomImages(),
+                          radius: 30,
+                        ),
                       ),
                     ),
                   ),
                   Container(
                     padding: new EdgeInsets.only(top:5.0,left: 18),
-                  ),
-                  Container(
-                    width: 270,
-                    height: 40,
-                    child: TextFormField(
-                      decoration: new InputDecoration(
-                        border: InputBorder.none
+                    child: Container(
+                      width: 270,
+                      height: 40,
+                      child: TextFormField(
+                        decoration: new InputDecoration(
+                          hintText: 'Digite o nome do contato',
+                          hintStyle:  TextStyle(color: Colors.white70),
+                          border: InputBorder.none
+                        ),
+                        style: TextStyle(color: Colors.white,fontSize: 18),
                       ),
-                      style: TextStyle(color: Colors.white,fontSize: 18),
                     ),
                   ),
-
                 ],
               ),
           Container(

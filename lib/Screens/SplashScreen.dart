@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_whatsapp/Screens/TelaContaNova/firstTime.dart';
 import 'package:splashscreen/splashscreen.dart';
 
-
-import 'HomePage.dart';
 
 class Splash extends StatelessWidget {
   @override
@@ -46,7 +45,7 @@ Widget _introScreen() {
               Colors.blueGrey.shade800,
             ],
           ),
-          navigateAfterSeconds: Whatsapp(),
+          navigateAfterSeconds: FirstScreen(),
           loaderColor: Colors.transparent,
         ),
         Container(

@@ -1,21 +1,15 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_whatsapp/Screens/Conversas/Chat/CampoEmoji.dart';
-import 'package:flutter_whatsapp/Screens/Conversas/Chat/TextControlller.dart';
-import 'package:flutter_whatsapp/Screens/Conversas/Chat/TextField.dart';
-
-
 
 class StatusScreen extends StatefulWidget {
-
 
   @override
   _StatusScreenState createState() => _StatusScreenState();
 }
 
 class _StatusScreenState extends State<StatusScreen>with SingleTickerProviderStateMixin {
-  AnimationController controller;
+  late AnimationController controller;
   @override
   void initState() {
     controller = AnimationController(
@@ -167,10 +161,7 @@ class _StatusScreenState extends State<StatusScreen>with SingleTickerProviderSta
                     ),
                     onTap: (){
                       setState(() {
-                          return TextField(
-                            autofocus: true,
-                            cursorColor: Colors.white,
-                          );
+
                       });
                     },
                   ),
