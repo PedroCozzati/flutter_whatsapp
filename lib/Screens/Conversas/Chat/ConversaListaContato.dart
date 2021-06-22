@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 
 class ConversaListaLeft extends StatefulWidget {
-  const ConversaListaLeft({String m}) ;
 
   @override
   _ConversaListaLeftState createState() => _ConversaListaLeftState();

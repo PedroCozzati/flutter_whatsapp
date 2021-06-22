@@ -4,37 +4,36 @@ import 'package:flutter_whatsapp/Models/Conversa.dart';
 
 
 class ConversaLista extends StatefulWidget {
-  final Conversa mensagem;
-  ConversaLista({this.mensagem});
+  const ConversaLista ({required this.mensagem});
+  final String mensagem;
+
   @override
   _ConversaListaState createState() => _ConversaListaState();
 }
 
-  @override
-  _ConversaListaState createState() => _ConversaListaState();
-
 class _ConversaListaState extends State<ConversaLista> {
-  final Conversa mensagem;
-  _ConversaListaState({this.mensagem});
+  Conversa mensagem =
+     Conversa(mensagem:'Boa noite',id:120498598649,data:DateTime.now(),
+     );
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
         reverse: true,
         shrinkWrap: true,
-        itemCount: mensagem.mensagem.length ,
+        itemCount: 2 ,
         itemBuilder: (context, indice) {
           return Container(
             padding: EdgeInsets.only(left: 14, right: 14, top: 10, bottom: 10),
             child: Align(
-              alignment: (mensagem.id == 1204939439658598649
+              alignment: (mensagem.id == 120498598649
                   ? Alignment.topRight
                   : Alignment.topLeft),
               child: Container(
                 constraints: BoxConstraints(minWidth: 50, maxWidth: 310),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: (mensagem.id == 1204939439658598649
+                  color: (mensagem.id == 120498598649
                       ? Colors.teal.shade900
                       : Colors.blueGrey.shade900),
                 ),

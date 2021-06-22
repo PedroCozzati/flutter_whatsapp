@@ -45,7 +45,7 @@ class _ChatState extends State<Chat> {
               ),
               onPressed: (){
                 setState(() {
-                  return BackgroundImage(image:'https://img.xcitefun.net/users/2014/07/359035,xcitefun-sunset-beach-9.jpg');
+
                 });
               }
           )

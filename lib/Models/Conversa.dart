@@ -5,9 +5,8 @@ class Conversa {
   String mensagem;
   int id;
   DateTime data;
-  bool visualizado;
 
-  Conversa({@required this.mensagem, @required this.id, @required this.data});
+  Conversa({required this.mensagem, required this.id, required this.data});
       //this.data,
       //this.visualizado,
   @override

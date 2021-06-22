@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CampoEmoji extends StatefulWidget {
-  const CampoEmoji({Key key}) : super(key: key);
+
 
   @override
   _CampoEmojiState createState() => _CampoEmojiState();

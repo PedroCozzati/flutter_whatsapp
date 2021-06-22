@@ -1,75 +1,84 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_whatsapp/Screens/TelaContaNova/firstTime.dart';
-import 'package:splashscreen/splashscreen.dart';
+import 'dart:async';
+import 'TelaContaNova/firstTime.dart';
 
+class Splash extends StatefulWidget{
+  @override
+  _SplashState createState() => _SplashState();
+}
 
-class Splash extends StatelessWidget {
+class _SplashState extends State<Splash>
+    with TickerProviderStateMixin {
+  late AnimationController controller;
+
+  @override
+  void initState() {
+    controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 5),
+    )..addListener(() {
+      setState(() {});
+    });
+    controller.repeat();
+    super.initState();
+    startTime();
+  }
+
+  startTime() async {
+    var duration = new Duration(seconds: 6);
+    return Timer(duration, route);
+  }
+
+  route() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => FirstScreen()),
+    );
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Container(
+          width: 800,
+          height: 700,
+          color: Colors.blueGrey.shade900,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Container(
+              child:
+                Image.network('https://logospng.org/download/whatsapp/logo-whatsapp-preto-branco-1024.png'),
+              ),
+              Text(
+                'Flutter Whatsapp\n\n',
+                style:
+                TextStyle(
+                    color: Colors.white,
+                    fontSize: 20
+                ),
+              ),
+              CircularProgressIndicator(
+                value: controller.value,
+                semanticsLabel: 'Linear progress indicator',
+              ),
+            ],
+          ),
+        ),
+    );
+  }
+}
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Splash Screen',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: TelaSplash(),
+      home: Splash(),
     );
   }
-}
-
-class TelaSplash extends StatefulWidget {
-
-  @override
-  _TelaSplashState createState() => _TelaSplashState();
-}
-
-class _TelaSplashState extends State<TelaSplash> {
-  @override
-  Widget build(BuildContext context) {
-    return _introScreen(
-    );
-  }
-}
-
-Widget _introScreen() {
-  return Material(
-    child: Stack(
-      children: <Widget>[
-        SplashScreen(
-          seconds: 9,
-          gradientBackground: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              Colors.blueGrey.shade900,
-              Colors.blueGrey.shade800,
-            ],
-          ),
-          navigateAfterSeconds: FirstScreen(),
-          loaderColor: Colors.transparent,
-        ),
-        Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: NetworkImage("https://pngimg.com/uploads/whatsapp/whatsapp_PNG95153.png"),
-              fit: BoxFit.scaleDown, scale: 6,
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left:125.0,top:470),
-          child: Container(
-            height: 400,
-            width: 500,
-            child: Text.rich(
-              TextSpan(
-                  text:'Flutter Whatsapp',
-                style: TextStyle(fontSize: 20,color: Colors.blueGrey),
-            ),
-            ),
-          ),
-        )
-      ],
-    ),
-  );
 }

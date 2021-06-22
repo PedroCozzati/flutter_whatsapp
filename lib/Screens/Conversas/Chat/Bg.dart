@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BackgroundImage extends StatefulWidget {
-  const BackgroundImage({this.image});
+  const BackgroundImage ({required this.image});
   final String image;
 
   @override

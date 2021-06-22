@@ -8,6 +8,7 @@ import 'TextControlller.dart';
 import 'TextField.dart';
 
 class ChatBody extends StatefulWidget {
+
   @override
   _ChatBodyState createState() => _ChatBodyState();
   List<Conversa> messages  = [];
@@ -35,7 +36,7 @@ class _ChatBodyState extends State<ChatBody> {
                  flex:1,
                  child: Container(
                    width: 400,
-                     child: ConversaLista()
+                     child: ConversaLista(mensagem: '',)
                  ),
                      ),
            Column(

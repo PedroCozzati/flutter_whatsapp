@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_whatsapp/Models/Conversa.dart';
 import 'package:flutter_whatsapp/Screens/Conversas/Chat/ConversaListaEu.dart';
 
+import 'ChatBody.dart';
+
 
 
 
@@ -60,8 +62,7 @@ class _TextControlState extends State<TextControl> {
                   Icons.send
               ),
               onPressed: () {
-                final String mensag = controladorMensagem.text;
-                final mensagem = Conversa(mensagem:mensag,id:2,data:DateTime.now());
+                final String mensagem = controladorMensagem.text;
                 Navigator.push(
                 context,
                 MaterialPageRoute(
