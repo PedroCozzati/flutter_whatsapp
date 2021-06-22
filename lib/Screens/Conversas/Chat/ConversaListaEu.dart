@@ -12,32 +12,44 @@ class ConversaLista extends StatefulWidget {
 }
 
 class _ConversaListaState extends State<ConversaLista> {
-  Conversa mensagem =
-     Conversa(mensagem:'Boa noite',id:120498598649,data:DateTime.now(),
-     );
+  List<Conversa> messages = [
+    Conversa(mensagem: "Bom dia! :)", id:12049448649, data: DateTime.now() ),
+    Conversa(mensagem: "Bom dia", id:120498598649, data: DateTime.now() ),
+    Conversa(mensagem: "*-*bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", id:120494498649, data: DateTime.now() ),
+    Conversa(mensagem: "Bom dia", id:120498598649, data: DateTime.now() ),
+    Conversa(mensagem: "*-*", id:120494498649, data: DateTime.now() ),
+    Conversa(mensagem: "Bom dia", id:120498598649, data: DateTime.now() ),
+    Conversa(mensagem: "*-*", id:120494498649, data: DateTime.now() ),
+    Conversa(mensagem: "Bom dia", id:120498598649, data: DateTime.now() ),
+    Conversa(mensagem: "*-*", id:120494498649, data: DateTime.now() ),
+    Conversa(mensagem: "Bom dia", id:120498598649, data: DateTime.now() ),
+    Conversa(mensagem: "*-*", id:120494498649, data: DateTime.now() ),
+    Conversa(mensagem: "Bom dia", id:120498598649, data: DateTime.now() ),
+    Conversa(mensagem: "*-*", id:120494498649, data: DateTime.now() ),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
         reverse: true,
         shrinkWrap: true,
-        itemCount: 2 ,
+        itemCount: messages.length,
         itemBuilder: (context, indice) {
           return Container(
             padding: EdgeInsets.only(left: 14, right: 14, top: 10, bottom: 10),
             child: Align(
-              alignment: (mensagem.id == 120498598649
+              alignment: (messages[indice].id == 120498598649
                   ? Alignment.topRight
                   : Alignment.topLeft),
               child: Container(
                 constraints: BoxConstraints(minWidth: 50, maxWidth: 310),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: (mensagem.id == 120498598649
+                  color: (messages[indice].id == 120498598649
                       ? Colors.teal.shade900
                       : Colors.blueGrey.shade900),
                 ),
-                padding: EdgeInsets.all(10),
+                padding: EdgeInsets.all(8),
                 child: Container(
                   child: Column(
                     children: [
@@ -45,24 +57,21 @@ class _ConversaListaState extends State<ConversaLista> {
                          text:TextSpan(
                             children:[
                               TextSpan(
-                                text: '${mensagem.mensagem}',style: TextStyle(fontSize: 15, color: Colors.white),
+                                text: '${messages[indice].mensagem}',style: TextStyle(fontSize: 17, color: Colors.white),
                                 ),
-
                                   ],
                           ),
                       ),
                         SizedBox(
-                          width: 25,
-                          height: 15,
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Text(
-                                mensagem.data.hour.toString()+':'+mensagem.data.minute.toString() ,style: TextStyle(fontSize: 10, color: Colors.white),
-                              ),
-                              ],
+                          width: messages[indice].data.hour.toDouble() + messages[indice].data.minute.toDouble(),
+                          height: 14,
+                          child: Align(
+                              alignment: Alignment.bottomCenter,
+                                child: Text(
+                                      messages[indice].data.hour.toString()+':'+messages[indice].data.minute.toString() ,style: TextStyle(fontSize: 10, color: Colors.white60),
+                                    ),
+                                ),
                           ),
-                        ),
                     ],
                   ),
                 ),

@@ -13,10 +13,8 @@ class Termos extends StatefulWidget {
 
 class _TermosState extends State<Termos> {
   final _formKey = GlobalKey<FormState>();
-  bool checkBox1 =false;
-  bool checkBox2 = false;
-  String aceito1 ='';
-  String aceito2 ='';
+  bool checkBox = false;
+  String aceito ='';
   @override
   Widget build(BuildContext context) {
     return  WillPopScope(
@@ -45,7 +43,7 @@ class _TermosState extends State<Termos> {
                           child: ListView(
                             shrinkWrap: true,
                               children: [
-                                Text('   Política de Privacidade',style: TextStyle(color: Colors.white,fontSize:30 ),),
+                                Text('   Política de Privacidade\n',style: TextStyle(color: Colors.white,fontSize:30 ),),
                                 Text(
                                     """           A sua privacidade é importante para nós. É política do whatsapp respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site whatsapp, e outros sites que possuímos e operamos.
 
@@ -131,32 +129,20 @@ class _TermosState extends State<Termos> {
                       ),
                     ],
                   ),
-                  Row(
-                    children:[
-                      Checkbox(
-                          activeColor: Colors.tealAccent,
-                          value: checkBox1,
-                          onChanged: (value){
-                            setState(() {
-                            checkBox1 = value!;
-                            if(checkBox1==value)
-                              aceito1 = 'y';
-                          });
-                          }
-                      ),
-                            Text('Aceito os termos',style: TextStyle(color: Colors.white70),)
-                          ],
-                        ),
+
                         Row(
                             children:[
                               Checkbox(
                                   activeColor: Colors.tealAccent,
-                                  value: checkBox2,
+                                  value: checkBox,
                                   onChanged: (value){
                                     setState(() {
-                                      checkBox2 = value!;
-                                      if(checkBox2==value)
-                                         aceito2 = 'y';
+                                      checkBox = value!;
+                                      if(checkBox==value)
+                                         aceito = 'y';
+                                      else if(checkBox!=value){
+                                        aceito = 'n';
+                                      }
                                     });
                                   }
                               ),
@@ -166,8 +152,11 @@ class _TermosState extends State<Termos> {
                       ElevatedButton(
                         style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.teal)),
                           onPressed:(){
-                          if (aceito1 == 'y'&& aceito2 == 'y') {
+                          if (aceito == 'y') {
                             _confirmarTermos(context);
+                          }
+                          else if (aceito != 'y') {
+                           print('!');
                           }
                             },
                           child: Text(

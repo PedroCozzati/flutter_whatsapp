@@ -14,9 +14,12 @@ final TextEditingController _controladorCel = TextEditingController();
 final int tamanhoNumeroCelular = 11;
 
 class _FirstScreenState extends State<FirstScreen> {
+
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return WillPopScope(
+        onWillPop: () async =>false,
+    child:Scaffold(
       appBar: AppBar(
         title: Center(child: Text('Bem vindo!')),
         backgroundColor: Colors.blueGrey.shade900,
@@ -31,13 +34,13 @@ class _FirstScreenState extends State<FirstScreen> {
               height: 20,
             ),
             CircleAvatar(
-              radius: 80,
-              backgroundImage: NetworkImage('https://yt3.ggpht.com/a/AATXAJwTwhMXtrKbVCkJBDayqTR74vIVEfT_NR88UQ=s900-c-k-c0xffffffff-no-rj-mo'),
-            ),
+                radius: 75,
+                backgroundImage: NetworkImage('https://yt3.ggpht.com/a/AATXAJwTwhMXtrKbVCkJBDayqTR74vIVEfT_NR88UQ=s900-c-k-c0xffffffff-no-rj-mo'),
+              ),
             Align(
               alignment: Alignment.bottomCenter,
               child: Container(
-                padding: new EdgeInsets.only(top:5.0,left: 10),
+                padding: new EdgeInsets.only(top:10.0,left: 10),
                 child: Container(
                   width: 250,
                   height: 130,
@@ -65,8 +68,8 @@ class _FirstScreenState extends State<FirstScreen> {
                         ),
                       ),
                       Container(
-                        width: 12,
-                        height: 12,
+                        width: 15,
+                        height: 15,
                       ),
                       Row(
                         children: [
@@ -112,6 +115,7 @@ class _FirstScreenState extends State<FirstScreen> {
         )
 
       ),
+    ),
     );
   }
   void _criarCadastro(BuildContext context){

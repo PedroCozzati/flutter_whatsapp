@@ -16,7 +16,7 @@ class _LoadingState extends State<Loading>
   void initState() {
     controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 5),
+      duration: const Duration(seconds: 1),
     )..addListener(() {
       setState(() {});
     });
@@ -26,7 +26,7 @@ class _LoadingState extends State<Loading>
   }
 
   startTime() async {
-    var duration = new Duration(seconds: 10);
+    var duration = new Duration(seconds: 5);
     return Timer(duration, route);
   }
 
