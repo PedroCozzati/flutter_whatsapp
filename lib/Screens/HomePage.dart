@@ -77,7 +77,7 @@ class _WhatsappState extends State<Whatsapp> {
         body: TabBarView(
           children: [
             PageCamera(),
-            ListConversas(),
+            Container(color: Colors.blueGrey.shade900,child: ListConversas()),
             ListStatus(),
             ListChamadas(),
           ],
