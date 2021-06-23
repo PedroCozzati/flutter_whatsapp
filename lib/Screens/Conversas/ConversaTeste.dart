@@ -34,7 +34,7 @@
 //           child:
 //           Container(
 //             width: 50,
-//             child: CircleAvatar(
+//             child: CircleAvatar
 //               radius: 25,
 //              // backgroundImage:,
 //             ),
