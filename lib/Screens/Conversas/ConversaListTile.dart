@@ -41,7 +41,7 @@ class _ConversaTileState extends State<ConversaTile> {
         onTap: (){
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Chat()),
+            MaterialPageRoute(builder: (context) => Chat(mensagem: '',)),
           );
         },
         leading:

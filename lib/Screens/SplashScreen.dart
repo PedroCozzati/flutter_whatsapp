@@ -98,7 +98,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Splash(),
       routes: <String, WidgetBuilder>{
-        '/pageOne': (BuildContext context) => new FirstScreen(),
+        '/pageOne': (BuildContext context) => new FirstScreen(myName:'',),
       },
     ),
     );

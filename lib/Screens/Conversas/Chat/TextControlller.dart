@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_whatsapp/Models/Conversa.dart';
 import 'package:flutter_whatsapp/Screens/Conversas/Chat/ConversaListaEu.dart';
+import 'package:flutter_whatsapp/Screens/Conversas/Chat/PageChat.dart';
 
 import 'ChatBody.dart';
 
@@ -9,6 +10,8 @@ import 'ChatBody.dart';
 
 
 class TextControl extends StatefulWidget {
+  const TextControl ({required this.mensagem});
+  final String mensagem;
   @override
   _TextControlState createState() => _TextControlState();
 }
@@ -66,9 +69,7 @@ class _TextControlState extends State<TextControl> {
                 Navigator.push(
                 context,
                 MaterialPageRoute(
-                builder: (context) => ConversaLista(
-                mensagem:mensagem
-                ),
+                builder: (context) => Chat(mensagem:mensagem),
                 ));
               },
             ),

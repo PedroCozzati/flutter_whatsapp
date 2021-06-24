@@ -6,7 +6,8 @@ import 'package:flutter_whatsapp/Screens/Conversas/Chat/Bg.dart';
 import 'ChatBody.dart';
 
 class Chat extends StatefulWidget {
-
+  const Chat ({required this.mensagem});
+  final String mensagem;
 
   @override
   _ChatState createState() => _ChatState();
@@ -73,7 +74,7 @@ class _ChatState extends State<Chat> {
             ),
             ),
       ),
-      body: ChatBody(),
+      body: ChatBody(mensagem: '',),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_whatsapp/Screens/Chamadas/ListChamadas.dart';
+import 'package:flutter_whatsapp/Screens/ConfigPage/config.dart';
 import 'Camera/PageCamera.dart';
 import 'Status/ListStatus.dart';
 import 'Conversas/listConversas.dart';
@@ -9,11 +10,15 @@ class Whatsapp extends StatefulWidget {
   _WhatsappState createState() => _WhatsappState();
 }
 class _WhatsappState extends State<Whatsapp> {
+
   @override
   Widget build(BuildContext context) {
     return  WillPopScope(
         onWillPop: () async => false,
     child: MaterialApp(
+      routes: {
+        '/config': (context) => Config(),
+      },
       debugShowCheckedModeBanner: false,
       home: DefaultTabController(
       length: 4,
@@ -70,7 +75,12 @@ class _WhatsappState extends State<Whatsapp> {
                     Icons.more_vert,
                     color: Colors.white70,
                 ),
-                onPressed: (){}
+                onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Config()),
+                  );
+                }
                 )
           ],
           ),

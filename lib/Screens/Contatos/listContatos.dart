@@ -121,7 +121,7 @@ class _ContactRow extends State<ContactRow> {
                         onTap: (){
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => Chat()));
+                                  MaterialPageRoute(builder: (context) => Chat(mensagem: '',)));
                             },
                         child: CircleAvatar(
                           backgroundImage: randomImages(),

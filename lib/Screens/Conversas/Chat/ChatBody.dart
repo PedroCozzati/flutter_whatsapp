@@ -8,15 +8,16 @@ import 'TextControlller.dart';
 import 'TextField.dart';
 
 class ChatBody extends StatefulWidget {
+  const ChatBody ({required this.mensagem});
+  final String mensagem;
 
   @override
   _ChatBodyState createState() => _ChatBodyState();
-  List<Conversa> messages  = [];
-  TextEditingController controladorMensagem = TextEditingController();
+
 }
 
 class _ChatBodyState extends State<ChatBody> {
-
+  static TextEditingController controladorMensagem = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -36,7 +37,7 @@ class _ChatBodyState extends State<ChatBody> {
                  flex:1,
                  child: Container(
                    width: 400,
-                     child: ConversaLista(mensagem: '',)
+                     child: ConversaLista(mensagem: controladorMensagem.toString())
                  ),
                      ),
            Column(
@@ -48,7 +49,7 @@ class _ChatBodyState extends State<ChatBody> {
                    child:Row(
                      children:[
                        CampoEmoji(),
-                       TextControl(),
+                       TextControl(mensagem: controladorMensagem.toString(),),
                        CampoText(),
                      ],
                    ),

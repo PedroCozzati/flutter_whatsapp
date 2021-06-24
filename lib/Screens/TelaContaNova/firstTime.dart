@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../HomePage.dart';
 import 'Termos.dart';
 
 class FirstScreen extends StatefulWidget {
 
+  String myName ;
+
+  FirstScreen({required this.myName});
   @override
   _FirstScreenState createState() => _FirstScreenState();
 }
+
 final _formKey = GlobalKey<FormState>();
 final TextEditingController _controladorNome = TextEditingController();
 final TextEditingController _controladorCel = TextEditingController();
@@ -35,7 +38,7 @@ class _FirstScreenState extends State<FirstScreen> {
             ),
             CircleAvatar(
                 radius: 75,
-                backgroundImage: NetworkImage('https://yt3.ggpht.com/a/AATXAJwTwhMXtrKbVCkJBDayqTR74vIVEfT_NR88UQ=s900-c-k-c0xffffffff-no-rj-mo'),
+                backgroundImage: NetworkImage('widget.myImg'),
               ),
             Align(
               alignment: Alignment.bottomCenter,
@@ -59,7 +62,9 @@ class _FirstScreenState extends State<FirstScreen> {
                           validator: (nomeCadastrado){
                             if (nomeCadastrado==null||nomeCadastrado.isEmpty){
                               return "Digite um nome";
-                            }},
+                            }
+
+                            },
                           decoration: new InputDecoration(
                               hintText: 'Digite o seu nome',
                               hintStyle:  TextStyle(color: Colors.white70),
@@ -87,6 +92,7 @@ class _FirstScreenState extends State<FirstScreen> {
                                 else if (telCadastrado.length < tamanhoNumeroCelular ){
                                   return "Digite um telefone valido";
                                 }
+
                                 },
 
                               decoration: new InputDecoration(
@@ -119,6 +125,8 @@ class _FirstScreenState extends State<FirstScreen> {
     );
   }
   void _criarCadastro(BuildContext context){
+    widget.myName = _controladorNome.toString();
+
     if (_formKey.currentState!.validate()) {
       Navigator.push(
         context,
