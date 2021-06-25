@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_whatsapp/Screens/TelaContaNova/firstTime.dart';
 
-class ConfigTileN extends StatefulWidget {
+class ConfigTileAjuda extends StatefulWidget {
 
   @override
-  _ConfigTileNState createState() => _ConfigTileNState();
+  _ConfigTileAjudaState createState() => _ConfigTileAjudaState();
 }
 
-class _ConfigTileNState extends State<ConfigTileN> {
-  final List nome = [
-    FirstScreen(myName: 'Conta',)
-  ];
-  @override
+class _ConfigTileAjudaState extends State<ConfigTileAjuda> {
+  final String label = 'Ajuda';
+  final String sub = 'Central de ajuda, fale conosco, política de\nprivacidade';
 
+  @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      height: 70,
       child: ListTile(
         onTap: (){
           // Navigator.push(
@@ -30,7 +29,7 @@ class _ConfigTileNState extends State<ConfigTileN> {
           Container(
             width: 30,
             child: Icon(
-              Icons.vpn_key,
+              Icons.help_outline,
               color: Colors.white60,
             ),
             decoration: new BoxDecoration(
@@ -44,7 +43,7 @@ class _ConfigTileNState extends State<ConfigTileN> {
             children:[
               Padding(
                 padding: const EdgeInsets.only(bottom:5.0),
-                child: Text(nome[0].myName,style: TextStyle(color: Colors.white,fontSize: 18),),
+                child: Text(label,style: TextStyle(color: Colors.white,fontSize: 18),),
               ),
 
             ],
@@ -56,7 +55,7 @@ class _ConfigTileNState extends State<ConfigTileN> {
             children:[
               Padding(
                 padding: const EdgeInsets.only(bottom:10.0),
-                child: Text('Privacidade, segurança, mudar número',style: TextStyle(color: Colors.white70,fontSize: 15),),
+                child: Text(sub,style: TextStyle(color: Colors.white70,fontSize: 15),),
               ),
             ],
           ),

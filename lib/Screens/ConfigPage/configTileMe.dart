@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_whatsapp/Models/Profiles.dart';
 import 'package:flutter_whatsapp/Screens/TelaContaNova/firstTime.dart';
+import 'package:flutter_whatsapp/Screens/TelaContaNova/firstTimeConfig.dart';
 
 class ConfigTileP extends StatefulWidget {
 
@@ -8,9 +10,14 @@ class ConfigTileP extends StatefulWidget {
 }
 
 class _ConfigTilePState extends State<ConfigTileP> {
-  final List nome = [
-    FirstScreen(myName: 'Pedro Henrique',)
+
+  final String nome = '';
+  List<Profile> perfil = [
+    Profile (profileImage: '',id:1,recado:'',lastMessage:'ewe', user: '',cel:1197374373),
   ];
+
+
+
   @override
 
   Widget build(BuildContext context) {
@@ -56,7 +63,7 @@ class _ConfigTilePState extends State<ConfigTileP> {
             children:[
               Padding(
                 padding: const EdgeInsets.only(bottom:5.0),
-                child: Text(nome[0].myName,style: TextStyle(color: Colors.white,fontSize: 18),),
+                child: Text(nome,style: TextStyle(color: Colors.white,fontSize: 18),),
               ),
 
             ],

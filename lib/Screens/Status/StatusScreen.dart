@@ -10,6 +10,7 @@ class StatusScreen extends StatefulWidget {
 
 class _StatusScreenState extends State<StatusScreen>with SingleTickerProviderStateMixin {
   late AnimationController controller;
+  final String label = 'João';
   @override
   void initState() {
     controller = AnimationController(
@@ -96,7 +97,7 @@ class _StatusScreenState extends State<StatusScreen>with SingleTickerProviderSta
                             text:TextSpan(
                               children: [
                               TextSpan(
-                              text:'Pedro Cozzati',
+                              text:label,
                                style: TextStyle(
                                   color: Colors.white,
                                  fontSize: 18,

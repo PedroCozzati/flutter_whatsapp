@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-abstract class FirstConfig extends StatefulWidget {
+class FirstConfig {
 
   String myName;
   String myImg;

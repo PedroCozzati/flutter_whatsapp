@@ -8,6 +8,7 @@ class StatusView extends StatefulWidget {
 }
 
 class _StatusViewState extends State<StatusView> {
+  final String label = 'João';
   @override
   Widget build(BuildContext context) {
     return ListTile(
@@ -27,7 +28,7 @@ class _StatusViewState extends State<StatusView> {
           ),
         ),
       ),
-      title: Text("Pedro Cozzati",style: TextStyle(color: Colors.white,fontSize: 18),),
+      title: Text(label,style: TextStyle(color: Colors.white,fontSize: 18),),
       subtitle: Text('há 10 minutos',style: TextStyle(color:Colors.white60,fontSize: 15),),
       tileColor: Colors.blueGrey.shade900,
       onTap: () {

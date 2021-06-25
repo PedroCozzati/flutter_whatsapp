@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_whatsapp/Models/Profiles.dart';
+import 'package:flutter_whatsapp/Screens/ConfigPage/config.dart';
+import 'package:flutter_whatsapp/Screens/TelaContaNova/firstTimeConfig.dart';
 import 'Termos.dart';
 
 class FirstScreen extends StatefulWidget {
 
   String myName ;
-
   FirstScreen({required this.myName});
+  final List<Profile> _listaMe = List.empty(growable: true);
+
   @override
   _FirstScreenState createState() => _FirstScreenState();
 }
@@ -15,14 +18,13 @@ final _formKey = GlobalKey<FormState>();
 final TextEditingController _controladorNome = TextEditingController();
 final TextEditingController _controladorCel = TextEditingController();
 final int tamanhoNumeroCelular = 11;
+List listaPerfil = new List.filled(0, null, growable:true);
 
 class _FirstScreenState extends State<FirstScreen> {
-
+  
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-        onWillPop: () async =>false,
-    child:Scaffold(
+    return  Scaffold(
       appBar: AppBar(
         title: Center(child: Text('Bem vindo!')),
         backgroundColor: Colors.blueGrey.shade900,
@@ -63,7 +65,7 @@ class _FirstScreenState extends State<FirstScreen> {
                             if (nomeCadastrado==null||nomeCadastrado.isEmpty){
                               return "Digite um nome";
                             }
-
+                            listaPerfil.add(nomeCadastrado);
                             },
                           decoration: new InputDecoration(
                               hintText: 'Digite o seu nome',
@@ -92,7 +94,7 @@ class _FirstScreenState extends State<FirstScreen> {
                                 else if (telCadastrado.length < tamanhoNumeroCelular ){
                                   return "Digite um telefone valido";
                                 }
-
+                                listaPerfil.add(telCadastrado);
                                 },
 
                               decoration: new InputDecoration(
@@ -106,6 +108,8 @@ class _FirstScreenState extends State<FirstScreen> {
                               child: Icon(Icons.send),
                               onPressed: (){
                                       _criarCadastro(context);
+                                      widget.myName = _controladorNome.toString();
+                                      FirstConfig(myName: widget.myName, recado: '', id: 1,myNumber: '',myImg: '',);
                                     },
                                 ),
                         ],
@@ -121,17 +125,51 @@ class _FirstScreenState extends State<FirstScreen> {
         )
 
       ),
-    ),
+
     );
+
   }
   void _criarCadastro(BuildContext context){
-    widget.myName = _controladorNome.toString();
-
+    final String nome = _controladorNome.text;
+    final String tel = _controladorCel.text;
+    final cadastroCompleto = Profile(user: nome,cel: 1,id: 1,recado: '',lastMessage: '', profileImage: '' );
+    Navigator.pop(context, cadastroCompleto);
+    ListView.builder(
+        itemCount:widget._listaMe.length,
+        itemBuilder: (context, indice){
+          final listaMe = widget._listaMe[indice];
+          return ItensFormulario(listaMe);
+        }
+    );
     if (_formKey.currentState!.validate()) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => Termos()),
+      Navigator.push(context, MaterialPageRoute(builder: (context){
+        return Config();
+      })).then(
+              (produtosAdd) => _atualizar(produtosAdd)
       );
     }
+    }
+  void _atualizar(Profile produtosAdd){
+    if(produtosAdd != null){
+      setState(() {
+        widget._listaMe.add(produtosAdd);
+      });
+    }
+  }
+  }
+class ItensFormulario extends StatelessWidget{
+  final Profile _listaMe;
+  ItensFormulario(this._listaMe);
+
+  @override
+  Widget build(BuildContext context){
+    return Card(
+        child:ListTile(
+            leading:Icon(Icons.accessibility_new),
+            title: Text( _listaMe.user.toString()),
+            subtitle: Text(_listaMe.cel.toString(), style: TextStyle(fontSize: 12),
+            )
+        )
+    );
   }
 }

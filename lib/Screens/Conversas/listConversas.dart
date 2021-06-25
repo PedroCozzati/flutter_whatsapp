@@ -31,15 +31,15 @@ class _ListConversasState extends State<ListConversas> {
     ];
 
   List<Profile> perfil = [
-    Profile (profileImage: profileImg[0],id:1,recado:'',lastMessage:'ewe', user: 'Elo'),
-    Profile (profileImage:profileImg[1],id:1,recado:'',lastMessage:'ewe', user: 'Joao'),
-    Profile (profileImage:profileImg[2],id:1,recado:'',lastMessage:'ewewe', user: 'Lucas'),
-    Profile (profileImage:profileImg[3],id:1,recado:'',lastMessage:'ewew', user: 'Sandra'),
-    Profile (profileImage:profileImg[4],id:1,recado:'',lastMessage:'ewew', user: 'Phill'),
-    Profile (profileImage:profileImg[5],id:1,recado:'',lastMessage:'ewew', user: 'Edu'),
-    Profile (profileImage:profileImg[6],id:1,recado:'',lastMessage:'ewew', user: 'M'),
-    Profile (profileImage:profileImg[7],id:1,recado:'',lastMessage:'ewewe', user: 'Lucas'),
-    Profile (profileImage:profileImg[0],id:1,recado:'',lastMessage:'ewew', user: 'Sandra'),
+    Profile (profileImage: profileImg[0],id:1,recado:'',lastMessage:'ewe', user: 'Elo',cel:1197374373),
+    Profile (profileImage:profileImg[1],id:1,recado:'',lastMessage:'ewe', user: 'Joao',cel:212121212),
+    Profile (profileImage:profileImg[2],id:1,recado:'',lastMessage:'ewewe', user: 'Lucas',cel:234234324),
+    Profile (profileImage:profileImg[3],id:1,recado:'',lastMessage:'ewew', user: 'Sandra',cel:212121212),
+    Profile (profileImage:profileImg[4],id:1,recado:'',lastMessage:'ewew', user: 'Phill',cel:212121212),
+    Profile (profileImage:profileImg[5],id:1,recado:'',lastMessage:'ewew', user: 'Edu',cel:212121212),
+    Profile (profileImage:profileImg[6],id:1,recado:'',lastMessage:'ewew', user: 'M',cel:212121212),
+    Profile (profileImage:profileImg[7],id:1,recado:'',lastMessage:'ewewe', user: 'Lucas',cel:212121212),
+    Profile (profileImage:profileImg[0],id:1,recado:'',lastMessage:'ewew', user: 'Sandra',cel:212121212),
 
   ];
   @override

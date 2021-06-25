@@ -24,7 +24,7 @@ class _StatusListTileState extends State<StatusListTile> {
               width: 50,
               child:CircleAvatar(
                 radius: 25,
-                backgroundImage: NetworkImage('https://yt3.ggpht.com/a/AATXAJwTwhMXtrKbVCkJBDayqTR74vIVEfT_NR88UQ=s900-c-k-c0xffffffff-no-rj-mo'),
+                backgroundImage: NetworkImage(''),
               ),
             ),
                 Container(

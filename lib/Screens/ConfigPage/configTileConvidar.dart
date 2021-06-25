@@ -1,16 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_whatsapp/Screens/TelaContaNova/firstTime.dart';
 
-class ConfigTileN extends StatefulWidget {
+class ConfigTileConvidar extends StatefulWidget {
 
   @override
-  _ConfigTileNState createState() => _ConfigTileNState();
+  _ConfigTileConvidarState createState() => _ConfigTileConvidarState();
 }
 
-class _ConfigTileNState extends State<ConfigTileN> {
-  final List nome = [
-    FirstScreen(myName: 'Conta',)
-  ];
+class _ConfigTileConvidarState extends State<ConfigTileConvidar> {
+  final String label = 'Convidar um amigo';
   @override
 
   Widget build(BuildContext context) {
@@ -30,7 +28,7 @@ class _ConfigTileNState extends State<ConfigTileN> {
           Container(
             width: 30,
             child: Icon(
-              Icons.vpn_key,
+              Icons.people,
               color: Colors.white60,
             ),
             decoration: new BoxDecoration(
@@ -44,23 +42,13 @@ class _ConfigTileNState extends State<ConfigTileN> {
             children:[
               Padding(
                 padding: const EdgeInsets.only(bottom:5.0),
-                child: Text(nome[0].myName,style: TextStyle(color: Colors.white,fontSize: 18),),
+                child: Text(label,style: TextStyle(color: Colors.white,fontSize: 18),),
               ),
 
             ],
           ),
         ),
-        subtitle: Padding(
-          padding: const EdgeInsets.only(bottom: 25),
-          child: Row(
-            children:[
-              Padding(
-                padding: const EdgeInsets.only(bottom:10.0),
-                child: Text('Privacidade, segurança, mudar número',style: TextStyle(color: Colors.white70,fontSize: 15),),
-              ),
-            ],
-          ),
-        ),
+
       ),
     );
   }
