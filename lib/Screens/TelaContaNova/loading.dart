@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_whatsapp/Screens/HomePage.dart';
+import 'package:flutter_whatsapp/Screens/home_page.dart';
+
+import '../../main.dart';
 
 class Loading extends StatefulWidget{
   @override
@@ -33,7 +35,7 @@ class _LoadingState extends State<Loading>
   route() {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => Whatsapp()),
+      MaterialPageRoute(builder: (context) => Whatsapp(cameras: cameras)),
     );
   }
 
