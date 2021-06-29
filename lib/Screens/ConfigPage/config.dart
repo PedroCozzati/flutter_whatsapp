@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_whatsapp/Screens/ConfigPage/configTileAjuda.dart';
-import 'package:flutter_whatsapp/Screens/ConfigPage/configTileArmazenamento.dart';
-import 'package:flutter_whatsapp/Screens/ConfigPage/configTileConversas.dart';
-import 'package:flutter_whatsapp/Screens/ConfigPage/configTileConvidar.dart';
-import 'package:flutter_whatsapp/Screens/ConfigPage/configTileInfo.dart';
-import 'package:flutter_whatsapp/Screens/ConfigPage/configTileMe.dart';
-import 'package:flutter_whatsapp/Screens/ConfigPage/configTileNotifica%C3%A7%C3%B5es.dart';
-import 'package:flutter_whatsapp/Screens/TelaContaNova/firstTime.dart';
+import 'package:flutter_whatsapp/Screens/ConfigPage/config_tile_ajuda.dart';
+import 'package:flutter_whatsapp/Screens/ConfigPage/config_tile_armazenamento.dart';
+import 'package:flutter_whatsapp/Screens/ConfigPage/config_tile_conversas.dart';
+import 'package:flutter_whatsapp/Screens/ConfigPage/config_tile_convidar.dart';
+import 'package:flutter_whatsapp/Screens/ConfigPage/config_tile_info.dart';
+import 'package:flutter_whatsapp/Screens/ConfigPage/config_tile_me.dart';
 
-import 'configTileConta.dart';
+
+
+
+import 'config_tile_conta.dart';
+import 'config_tile_notificacoes.dart';
 
 class Config extends StatefulWidget {
 
